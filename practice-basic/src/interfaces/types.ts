@@ -1,4 +1,4 @@
-import { ChangeEvent, FormEvent } from 'react';
+import { ChangeEvent, FormEvent, ReactNode } from 'react';
 
 // Constants
 import { TYPE } from '@/constants';
@@ -19,6 +19,13 @@ export interface BorrowProps extends ProductProps {
   borrowDate?: string;
   borrowId: string;
   onClick: (borrowId: string) => void;
+}
+
+export interface ShowAllProps extends ProductProps {
+  onClick: () => void;
+  children: ReactNode;
+  isLoading: boolean;
+  heading: string;
 }
 
 export interface ToastProps {
