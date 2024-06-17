@@ -53,6 +53,11 @@ const Shelf = () => {
     navigate(`${URLS.FAVORITE}`);
   };
 
+  // Handle navigate to book preview
+  const handleBookPreview = (bookId: string) => {
+    navigate(`${URLS.BOOK_PREVIEW}?bookId=${bookId}`);
+  };
+
   return (
     <div className="mt-7">
       <h1 className="capitalize text-xl font-bold text-dark">
@@ -80,6 +85,8 @@ const Shelf = () => {
               onClick={handleReturnBook}
               borrowDate={book.borrowDate.toString()}
               borrowId={book.borrowId}
+              id={book.id}
+              onPreview={handleBookPreview}
             />
           ))}
         </ListCard>

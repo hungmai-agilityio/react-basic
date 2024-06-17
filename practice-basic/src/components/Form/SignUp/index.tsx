@@ -98,9 +98,9 @@ const SignUp = ({
         />
         <p className="text-sm mt-10">
           Already a user?{' '}
-          <a className="text-dark underline" onClick={handleMoveToSignIn}>
+          <span className="text-dark underline" onClick={handleMoveToSignIn}>
             Login now
-          </a>
+          </span>
         </p>
       </form>
     </Form>

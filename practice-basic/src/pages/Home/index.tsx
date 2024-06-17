@@ -55,6 +55,10 @@ const Home = () => {
     navigate(`${URLS.SHELF}`);
   };
 
+  const handleBookPreview = (bookId: string) => {
+    navigate(`${URLS.BOOK_PREVIEW}?bookId=${bookId}`);
+  };
+
   return (
     <div className="mt-12">
       <Quote />
@@ -83,6 +87,8 @@ const Home = () => {
                     key={book.id}
                     rating={book.rating}
                     title={book.title}
+                    id={book.id}
+                    onPreview={handleBookPreview}
                   />
                 ))
               )}

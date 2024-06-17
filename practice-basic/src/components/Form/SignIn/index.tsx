@@ -76,9 +76,9 @@ const SignIn = ({
         />
         <p className="text-sm mt-16">
           New User ?{' '}
-          <a className="text-dark underline" onClick={handleMoveToSignUp}>
+          <span className="text-dark underline" onClick={handleMoveToSignUp}>
             Register Here
-          </a>
+          </span>
         </p>
       </form>
     </Form>

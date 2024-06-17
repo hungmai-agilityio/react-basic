@@ -1,16 +1,28 @@
 import { ProductProps } from '@/interfaces';
 
 const Product = ({
-  image,
-  title,
   author,
   createdAt,
-  rating
+  id,
+  image,
+  onPreview,
+  rating,
+  title
 }: ProductProps) => {
   const publishYear = createdAt ? createdAt.substring(0, 4) : '';
 
+  // Handle click for get data
+  const handleClick = () => {
+    if (id) {
+      onPreview!(id);
+    }
+  };
+
   return (
-    <div className="py-4 p-4 w-40 h-64 rounded-xl bg-white mb-4">
+    <div
+      className="py-4 p-4 w-40 h-64 rounded-xl bg-white mb-4 cursor-pointer"
+      onClick={handleClick}
+    >
       <div className="flex justify-center">
         <img
           src={image}

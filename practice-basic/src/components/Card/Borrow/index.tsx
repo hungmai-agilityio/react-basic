@@ -8,28 +8,20 @@ import { SIZE, TYPE } from '@/constants';
 
 // Components
 import Button from '@/components/Button/Default';
-
-interface BorrowProps {
-  title?: string;
-  image?: string;
-  author?: string;
-  rating?: number;
-  createdAt?: string;
-  borrowDate?: string;
-  borrowId: string;
-  onClick: (borrowId: string) => void;
-}
+import { BorrowProps } from '@/interfaces';
 
 export const Borrow = memo(
   ({
-    title,
-    image,
     author,
-    rating,
-    createdAt,
     borrowDate,
     borrowId,
-    onClick
+    createdAt,
+    image,
+    id,
+    onClick,
+    onPreview,
+    rating,
+    title
   }: BorrowProps) => {
     const handleClick = () => {
       onClick(borrowId);
@@ -38,13 +30,20 @@ export const Borrow = memo(
     const publishYear = createdAt?.substring(0, 4);
     const borrowedDate = borrowDate && convertDate(borrowDate);
 
+    const handlePreview = () => {
+      if (id) {
+        onPreview!(id);
+      }
+    };
+
     return (
       <div className="w-card-borrow h-card-borrow p-4 bg-white rounded-xl">
         <div className="flex items-start gap-8">
           <img
             src={image}
             alt={title}
-            className="w-shelf h-shelf border-silver-250 rounded"
+            className="w-shelf h-shelf border-silver-250 rounded cursor-pointer"
+            onClick={handlePreview}
           />
           <div>
             <p className="mt-2">Borrowed on</p>

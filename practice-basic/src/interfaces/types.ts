@@ -4,14 +4,22 @@ import { ChangeEvent, FormEvent } from 'react';
 import { TYPE } from '@/constants';
 
 export interface ProductProps {
-  image?: string;
-  title?: string;
   author?: string;
   createdAt?: string;
+  id?: string;
+  image?: string;
+  onPreview?: (id: string) => void;
   rating?: number;
+  title?: string;
 }
 
-export interface AuthorProps extends Pick<ProductProps, 'author' | 'title'> {}
+export interface AuthorProps extends Pick<ProductProps, 'author' | 'title'> { }
+
+export interface BorrowProps extends ProductProps {
+  borrowDate?: string;
+  borrowId: string;
+  onClick: (borrowId: string) => void;
+}
 
 export interface ToastProps {
   type: TYPE.SUCCESS | TYPE.ERROR;
