@@ -95,30 +95,30 @@ const BookPreview = ({ showToast }: ShowToastProps) => {
       });
 
       return;
-    }
-
-    const data = {
-      id: uuidv4(),
-      user_id: userData.id,
-      book_id: book!.id,
-      created_at: new Date()
-    };
-
-    const response = await borrowBook(data);
-
-    if (response.data) {
-      setIsBorrow(true);
-      showToast({
-        type: TYPE.SUCCESS,
-        message: MESSAGE_API.BORROW_SUCCESS
-      });
     } else {
-      showToast({
-        type: TYPE.ERROR,
-        message: MESSAGE_API.NETWORK_ERROR
-      });
+      const data = {
+        id: uuidv4(),
+        user_id: userData.id,
+        book_id: book!.id,
+        created_at: new Date()
+      };
+
+      const response = await borrowBook(data);
+
+      if (response.data) {
+        setIsBorrow(true);
+        showToast({
+          type: TYPE.SUCCESS,
+          message: MESSAGE_API.BORROW_SUCCESS
+        });
+      } else {
+        showToast({
+          type: TYPE.ERROR,
+          message: MESSAGE_API.NETWORK_ERROR
+        });
+      }
+      setIsSubmitting(false);
     }
-    setIsSubmitting(false);
   };
 
   return (
