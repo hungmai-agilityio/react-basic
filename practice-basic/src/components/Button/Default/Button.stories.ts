@@ -46,7 +46,7 @@ export const ButtonDisabled: Story = {
     name: "Submit",
     size: SIZE.MEDIUM,
     type: TYPE.PRIMARY,
-    disabled: true,
+    isDisabled: true,
     onClick: () => alert('Can not submit'),
   }
 }
