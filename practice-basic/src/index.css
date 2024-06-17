@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: "Inter";
-  src: url("src/assets/fonts/Inter-Regular.ttf");
+  src: url("/fonts/Inter-Regular.ttf");
 }
 
 .active{
