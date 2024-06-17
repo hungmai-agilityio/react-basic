@@ -39,7 +39,7 @@ import Author from '@/components/Card/Author';
 
 const BookPreview = ({ showToast }: ShowToastProps) => {
   const [book, setBook] = useState<IBook | null>(null);
-  const [isBorrow, setIsBorrow] = useState<boolean | undefined>(false);
+  const [isBorrow, setIsBorrow] = useState<boolean | undefined>(undefined);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
   const navigate = useNavigate();
@@ -64,13 +64,11 @@ const BookPreview = ({ showToast }: ShowToastProps) => {
       if (userData?.id) {
         const borrowed = await getUserData(userData.id, END_POINT.BORROWED);
         const isBorrowed = borrowed.data?.some(
-          (borrow) => borrow.book_id === book?.id
+          (borrow) => borrow.book_id === bookId
         );
         setIsBorrow(isBorrowed);
       }
     };
-
-    console.log('isss', isBorrow);
 
     fetchBookId();
   }, [book?.id]);
@@ -90,11 +88,10 @@ const BookPreview = ({ showToast }: ShowToastProps) => {
   const handleBorrowBook = async () => {
     setIsSubmitting(true);
 
-    console.log(isBorrow);
-
     if (isBorrow) {
       return;
     }
+
     const data = {
       id: uuidv4(),
       user_id: userData.id,
@@ -188,7 +185,7 @@ const BookPreview = ({ showToast }: ShowToastProps) => {
               onClick={handleBorrowBook}
               type={TYPE.PRIMARY}
               size={SIZE.MEDIUM}
-              isDisabled={isSubmitting}
+              isDisabled={isSubmitting || isBorrow}
             />
           </div>
         </div>
