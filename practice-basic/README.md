@@ -9,8 +9,8 @@
 
 #### Database diagram
 
-![ALT](./src/assets/images/relationship-user-book.drawio.png)
-![ALT](./src/assets/images/workflow-application.drawio.png)
+![ALT](./public/images/relationship-user-book.drawio.png)
+![ALT](./public/images/workflow-application.drawio.png)
 
 - Build a website for My Shelf Books
 - Description: using available data API, user can use CRUD and search books

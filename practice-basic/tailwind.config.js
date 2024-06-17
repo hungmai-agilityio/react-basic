@@ -11,7 +11,7 @@ export default {
       backgroundImage: {
         'custom-gradient':
           'linear-gradient(140.88deg, #eb5231 -29.15%, #571fcf 151.64%), linear-gradient(0deg, #0000001a, #0000001a)',
-        form: 'url("src/assets/images/background.png")'
+        form: 'url("/images/background.png")'
       },
 
       colors: {
@@ -60,7 +60,7 @@ export default {
         'tb-lg': '40%',
         'tb-full': '98%',
         'card-borrow': '308px',
-        'shelf': '123px',
+        shelf: '123px',
         'card-preview': '273px'
       },
 
@@ -74,7 +74,7 @@ export default {
         'avatar-sm': '45px',
         'avtar-md': '60px',
         'avatar-lg': '100px',
-        'shelf': '170px',
+        shelf: '170px',
         'prev-book': '277px',
         50: '50px',
         170: '170px',

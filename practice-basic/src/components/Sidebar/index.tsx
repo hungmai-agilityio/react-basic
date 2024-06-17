@@ -16,7 +16,7 @@ const Sidebar = ({ children }: SidebarProps) => {
   return (
     <aside className="bg-white w-sidebar h-screen">
       <img
-        src="src/assets/images/logo.png"
+        src="/images/logo.png"
         alt="Logo"
         className="w-32 pt-10 ml-14"
         onClick={handleNavigateHome}

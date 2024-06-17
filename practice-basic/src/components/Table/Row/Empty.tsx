@@ -10,7 +10,7 @@ const Empty = ({ message }: IProps) => {
       <td>
         <p className="text-center">{message}</p>
         <img
-          src="src/assets/images/search.jpg"
+          src="/images/search.jpg"
           alt="search null"
           className="mt-10 w-445 h-auto my-0 mx-auto"
         />

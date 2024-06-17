@@ -15,7 +15,7 @@ export const Preview = memo(({ image, title }: PreviewProps) => {
       <div className="mt-7 text-dark flex items-center gap-4 justify-around">
         <div className="text-xs font-bold">
           <img
-            src="src/assets/images/preview.svg"
+            src="/images/preview.svg"
             alt="preview icon"
             className=" w-4 h-4 ml-2"
           />
@@ -23,7 +23,7 @@ export const Preview = memo(({ image, title }: PreviewProps) => {
         </div>
         <div className="text-xs font-bold">
           <img
-            src="src/assets/images/notes.svg"
+            src="/images/notes.svg"
             alt="notes icon"
             className=" w-4 h-4 ml-2"
           />
@@ -31,7 +31,7 @@ export const Preview = memo(({ image, title }: PreviewProps) => {
         </div>
         <div className="text-xs font-bold">
           <img
-            src="src/assets/images/share.svg"
+            src="/images/share.svg"
             alt="share icon"
             className=" w-4 h-4 ml-2"
           />

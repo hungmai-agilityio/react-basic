@@ -21,17 +21,17 @@ const VALID_IMAGE = [
 const LIST_ITEM = [
   {
     name: 'Home',
-    icon: 'src/assets/images/home.svg',
+    icon: '/images/home.svg',
     path: '/'
   },
   {
     name: 'Search',
-    icon: 'src/assets/images/search.svg',
+    icon: '/images/search.svg',
     path: '/search'
   },
   {
     name: 'My Shelf',
-    icon: 'src/assets/images/shelf.svg',
+    icon: '/images/shelf.svg',
     path: '/shelf'
   }
 ];

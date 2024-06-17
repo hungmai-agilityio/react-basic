@@ -8,11 +8,7 @@ const Author = ({ author, title }: AuthorProps) => {
       </p>
       <div className="flex justify-between items-center">
         <p className="font-semibold capitalize">{author}</p>
-        <img
-          src="src/assets/images/author.jpg"
-          alt="author ${author}"
-          className="w-36"
-        />
+        <img src="/images/author.jpg" alt="author ${author}" className="w-36" />
       </div>
       <p className="text-xs mt-5">
         {author} is a usability consultant who has more than 30 years of

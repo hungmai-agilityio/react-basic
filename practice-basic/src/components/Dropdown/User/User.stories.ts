@@ -18,7 +18,7 @@ export const Default: Story = {
 
 export const HasAvatar: Story = {
   args: {
-    avatar: 'src/assets/images/logo.png',
+    avatar: '/images/logo.png',
     name: 'Hung Mai'
   }
 }

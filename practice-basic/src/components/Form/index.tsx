@@ -15,12 +15,9 @@ const Form = ({ title, sub, children, height }: FormProps) => {
         className={clsx(
           'max-w-450 m-form bg-white p-8 rounded-xl shadow-form',
           height
-        )}>
-        <img
-          src="src/assets/images/logo.png"
-          alt="Logo"
-          className="block my-0 mx-auto"
-        />
+        )}
+      >
+        <img src="/images/logo.png" alt="Logo" className="block my-0 mx-auto" />
         <div className="text-center my-12 mx-0">
           <h1 className="text-lg mb-4">{title}</h1>
           <p className="text-sm text-silver-250">{sub}</p>

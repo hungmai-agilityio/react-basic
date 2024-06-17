@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Item>;
 export const Default: Story = {
   args: {
     name: 'Home',
-    icon: 'src/assets/images/home.svg',
+    icon: '/images/home.svg',
     path: '/'
   }
 };
