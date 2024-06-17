@@ -1,0 +1,102 @@
+.table {
+  &__container {
+    width: 98%;
+    border-collapse: separate;
+    border-spacing: 0 30px;
+    color: $text-primary;
+    text-transform: capitalize;
+
+    th,
+    td {
+      padding: 10px;
+      vertical-align: middle;
+    }
+  }
+
+  &__header {
+    font-size: $font-size-medium;
+    font-weight: $font-weight-bold;
+    text-align: left;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: $color-silver-soft;
+  }
+
+  &__body {
+    position: relative;
+  }
+
+  &__row {
+    background-color: $color-white;
+    font-size: $font-size-small;
+
+    td:first-child {
+      border-left-style: solid;
+      border-radius: 10px 0 0 10px;
+    }
+
+    td:last-child {
+      border-right-style: solid;
+      border-radius: 0 10px 10px 0;
+    }
+  }
+
+  &__wrapper {
+    &__title {
+      gap: 30;
+      padding-left: 20px;
+
+      img {
+        width: 75px;
+        height: 100px;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+    }
+  }
+
+  &__cell {
+    &__title {
+      width: 40%;
+    }
+
+    &__category {
+      width: 16%;
+    }
+
+    &__rating,
+    &__status {
+      width: 12%;
+    }
+
+    &__favorite {
+      width: 6%;
+    }
+
+    &--like {
+      cursor: pointer;
+
+      &:hover {
+        color: $color-red;
+      }
+    }
+
+    &--liked {
+      color: $color-red;
+    }
+
+    &--liked:hover {
+      filter: brightness(1.5);
+    }
+  }
+
+  &__result-message {
+    font-size: $font-size-extra-large;
+    font-weight: $font-weight-bold;
+    color: $color-gray;
+    position: absolute;
+    top: 30px;
+    left: 100px;
+  }
+}
