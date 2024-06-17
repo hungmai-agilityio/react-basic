@@ -70,6 +70,8 @@ const BookPreview = ({ showToast }: ShowToastProps) => {
       }
     };
 
+    console.log('isss', isBorrow);
+
     fetchBookId();
   }, [book?.id]);
 
@@ -88,37 +90,33 @@ const BookPreview = ({ showToast }: ShowToastProps) => {
   const handleBorrowBook = async () => {
     setIsSubmitting(true);
 
+    console.log(isBorrow);
+
     if (isBorrow) {
+      return;
+    }
+    const data = {
+      id: uuidv4(),
+      user_id: userData.id,
+      book_id: book!.id,
+      created_at: new Date()
+    };
+
+    const response = await borrowBook(data);
+
+    if (response.data) {
+      setIsBorrow(true);
+      showToast({
+        type: TYPE.SUCCESS,
+        message: MESSAGE_API.BORROW_SUCCESS
+      });
+    } else {
       showToast({
         type: TYPE.ERROR,
-        message: MESSAGE_VALID.BORROW_EXIST
+        message: MESSAGE_API.NETWORK_ERROR
       });
-
-      return;
-    } else {
-      const data = {
-        id: uuidv4(),
-        user_id: userData.id,
-        book_id: book!.id,
-        created_at: new Date()
-      };
-
-      const response = await borrowBook(data);
-
-      if (response.data) {
-        setIsBorrow(true);
-        showToast({
-          type: TYPE.SUCCESS,
-          message: MESSAGE_API.BORROW_SUCCESS
-        });
-      } else {
-        showToast({
-          type: TYPE.ERROR,
-          message: MESSAGE_API.NETWORK_ERROR
-        });
-      }
-      setIsSubmitting(false);
     }
+    setIsSubmitting(false);
   };
 
   return (
