@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Font Awesome
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 // Constants
-import { SIZE, TYPE } from '@/constants';
+import { SIZE, TYPE, URLS } from '@/constants';
 
 // Interface
 import { AuthenProps } from '@/interfaces';
@@ -29,6 +30,7 @@ const SignUp = ({
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [showConfirmPassword, setShowConfirmPassword] =
     useState<boolean>(false);
+  const navigate = useNavigate();
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
@@ -36,6 +38,10 @@ const SignUp = ({
 
   const toggleShowConfirmPassword = () => {
     setShowConfirmPassword(!showConfirmPassword);
+  };
+
+  const handleMoveToSignIn = () => {
+    navigate(`${URLS.SIGN_IN}`);
   };
 
   return (
@@ -92,7 +98,7 @@ const SignUp = ({
         />
         <p className="text-sm mt-10">
           Already a user?{' '}
-          <a href="/sign-in" className="text-dark underline">
+          <a className="text-dark underline" onClick={handleMoveToSignIn}>
             Login now
           </a>
         </p>

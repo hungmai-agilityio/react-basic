@@ -10,7 +10,7 @@ const Product = ({
   const publishYear = createdAt ? createdAt.substring(0, 4) : '';
 
   return (
-    <div className="py-4 p-4 w-40 h-64 rounded-xl bg-white">
+    <div className="py-4 p-4 w-40 h-64 rounded-xl bg-white mb-4">
       <div className="flex justify-center">
         <img
           src={image}

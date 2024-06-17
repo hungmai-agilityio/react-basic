@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // Font Awesome
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 
 // Constants
-import { SIZE, TYPE } from '@/constants';
+import { SIZE, TYPE, URLS } from '@/constants';
 
 // Interface
 import { AuthenProps } from '@/interfaces';
@@ -24,9 +25,14 @@ const SignIn = ({
   message
 }: AuthenProps) => {
   const [showPassword, setShowPassword] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   const toggleShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const handleMoveToSignUp = () => {
+    navigate(`${URLS.SIGN_UP}`);
   };
 
   return (
@@ -70,7 +76,7 @@ const SignIn = ({
         />
         <p className="text-sm mt-16">
           New User ?{' '}
-          <a href="/sign-up" className="text-dark underline">
+          <a className="text-dark underline" onClick={handleMoveToSignUp}>
             Register Here
           </a>
         </p>
