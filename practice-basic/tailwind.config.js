@@ -62,12 +62,12 @@ export default {
         'tb-full': '98%',
         'card-borrow': '308px',
         shelf: '123px',
-        'card-preview': '273px'
+        'card-preview': '273px',
+        form: '565px'
       },
 
       maxWidth: {
         sm: '80px',
-        450: '450px',
         487: '487px'
       },
 
@@ -81,11 +81,9 @@ export default {
         170: '170px',
         265: '265px',
         418: '418px',
-        'sign-in': '770px',
-        'sign-up': '850px',
+        form: '917px',
         main: 'calc(100vh - 111px)',
-        'card-borrow': '260px',
-        form: '970px'
+        'card-borrow': '260px'
       },
 
       boxShadow: {

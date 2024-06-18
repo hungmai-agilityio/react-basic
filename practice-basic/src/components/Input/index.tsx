@@ -42,7 +42,7 @@ export const Input = memo(
   }: InputProps) => {
     return (
       <>
-        <div className="mb-3">
+        <div className="mb-5">
           {label && (
             <label
               htmlFor={htmlFor}

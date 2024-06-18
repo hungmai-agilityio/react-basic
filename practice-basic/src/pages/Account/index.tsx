@@ -170,7 +170,7 @@ const Account = ({ showToast }: ShowToastProps) => {
   const idCode = user?.id.split('-').join('');
 
   return (
-    <div className="m-form w-10/12 h-form bg-white rounded-xl py-8 px-5 text-dark">
+    <div className="m-form w-9/12 bg-white rounded-xl py-8 px-5 text-dark">
       <p className="text-orange-550 text-md font-bold">Account Setting</p>
       <div className="mt-14">
         <p className="font-medium text-base">Your Profile Picture</p>

@@ -45,11 +45,7 @@ const SignUp = ({
   };
 
   return (
-    <Form
-      height="h-sign-up"
-      title="Registration"
-      sub="For Both Staff & Students"
-    >
+    <Form title="Registration" sub="For Both Staff & Students">
       <form>
         <Input
           label="Name"
@@ -90,18 +86,20 @@ const SignUp = ({
           onClick={toggleShowConfirmPassword}
           message={message?.confirm}
         />
-        <Button
-          name="Register"
-          type={TYPE.PRIMARY}
-          onClick={onClick!}
-          size={SIZE.LARGE}
-        />
-        <p className="text-sm mt-10">
-          Already a user?{' '}
-          <span className="text-dark underline" onClick={handleMoveToSignIn}>
-            Login now
-          </span>
-        </p>
+        <div className="mt-8">
+          <Button
+            name="Register"
+            type={TYPE.PRIMARY}
+            onClick={onClick!}
+            size={SIZE.LARGE}
+          />
+          <p className="text-sm mt-10">
+            Already a user?{' '}
+            <span className="text-dark underline" onClick={handleMoveToSignIn}>
+              Login now
+            </span>
+          </p>
+        </div>
       </form>
     </Form>
   );

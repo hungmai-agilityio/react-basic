@@ -36,11 +36,7 @@ const SignIn = ({
   };
 
   return (
-    <Form
-      height="h-sign-in"
-      title="Welcome"
-      sub="Sign in to continue to yourDigital Library"
-    >
+    <Form title="Welcome" sub="Sign in to continue to yourDigital Library">
       <form>
         <Input
           label="Email"
@@ -62,7 +58,7 @@ const SignIn = ({
           message={message?.password}
         />
 
-        <div className="flex justify-between my-5">
+        <div className="flex justify-between my-12">
           <Checkbox label="Remember me" />
           <a href="" className="underline">
             Forgot password?

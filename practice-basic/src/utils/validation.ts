@@ -5,17 +5,13 @@ interface FormValues {
   [key: string]: string;
 }
 
-interface FieldErrors {
-  [key: string]: string;
-}
-
 /**
  * Function check validation
  * @param {object} data
  * @returns {object}
  */
-const validation = (data: FormValues): FieldErrors => {
-  const errors: FieldErrors = {};
+const validation = (data: FormValues): FormValues => {
+  const errors: FormValues = {};
 
   Object.keys(data).forEach((key) => {
     const value = data[key];
