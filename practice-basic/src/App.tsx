@@ -22,6 +22,7 @@ import BookPreview from '@/pages/BookPreview';
 import Shelf from '@/pages/Shelf';
 import FavoriteBooksPage from '@/pages/Favorite';
 import Account from '@/pages/Account';
+import NotFound from '@/pages/NotFound';
 
 function App() {
   const [toasts, setToasts] = useState<ToastProps[]>([]);
@@ -58,6 +59,7 @@ function App() {
           <Route path={FAVORITE} element={<FavoriteBooksPage />} />
           <Route path={ACCOUNT} element={<Account showToast={showToast} />} />
         </Route>
+        <Route path="*" element={<NotFound />}></Route>
       </Routes>
 
       <Toast toasts={toasts} />

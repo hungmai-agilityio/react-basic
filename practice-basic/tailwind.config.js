@@ -27,7 +27,8 @@ export default {
         'silver-350': '#f3f3f7',
         'green-450': '#42bb4e',
         'green-dark': '#1ea97c',
-        rating: '#face1b'
+        rating: '#face1b',
+        404: '#f7f9fb'
       },
 
       fontSize: {
