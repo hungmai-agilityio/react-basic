@@ -18,6 +18,7 @@ import { Borrow } from '@/components/Card/Borrow';
 import ListCard from '@/components/Card/List';
 
 const Shelf = () => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [books, setBooks] = useState<
     (IBook & { borrowId: string; borrowDate: Date })[]
   >([]);
@@ -32,6 +33,7 @@ const Shelf = () => {
         const response = await getUserData(userData?.id, END_POINT.BORROWED);
         const bookBorrowed = await getBorrowedBook(response.data!);
         setBooks(bookBorrowed);
+        setIsLoading(false);
       }
     };
 
@@ -73,23 +75,27 @@ const Shelf = () => {
         </h2>
       </div>
       <div className="mt-9">
-        <ListCard type={TYPE.SHELF}>
-          {books.map((book) => (
-            <Borrow
-              key={book.id}
-              image={book.image}
-              title={book.title}
-              author={book.author}
-              createdAt={book.created_at.toString()}
-              rating={book.rating}
-              onClick={handleReturnBook}
-              borrowDate={book.borrowDate.toString()}
-              borrowId={book.borrowId}
-              id={book.id}
-              onPreview={handleBookPreview}
-            />
-          ))}
-        </ListCard>
+        {isLoading ? (
+          <p className="text-md">Loading...</p>
+        ) : (
+          <ListCard type={TYPE.SHELF}>
+            {books.map((book) => (
+              <Borrow
+                key={book.id}
+                image={book.image}
+                title={book.title}
+                author={book.author}
+                createdAt={book.created_at.toString()}
+                rating={book.rating}
+                onClick={handleReturnBook}
+                borrowDate={book.borrowDate.toString()}
+                borrowId={book.borrowId}
+                id={book.id}
+                onPreview={handleBookPreview}
+              />
+            ))}
+          </ListCard>
+        )}
       </div>
     </div>
   );
